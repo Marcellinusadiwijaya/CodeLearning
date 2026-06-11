@@ -7,7 +7,7 @@ import "./CSS/index.css";
 // Pages
 import App from "./App";
 import Login from "./Login";
-import Register from "./register";
+import Register from "./Register";
 import PythonCourse from "./pages/PythonCourse";
 import CourseMenu from "./pages/CourseMenu";
 import AllCourseMenu from "./pages/AllCourseMenu";
