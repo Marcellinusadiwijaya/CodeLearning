@@ -11,6 +11,7 @@ import Register from "./Register";
 import PythonCourse from "./pages/PythonCourse";
 import CourseMenu from "./pages/CourseMenu";
 import AllCourseMenu from "./pages/AllCourseMenu";
+import ResetPassword from "./ResetPassword";
 
 
 createRoot(document.getElementById("root")).render(
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
         {/* MAIN APP */}
         <Route path="/app" element={<App />} />
