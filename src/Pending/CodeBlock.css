@@ -1,0 +1,78 @@
+/* Layout */
+.code-block-page {
+  padding: 30px;
+}
+
+.block-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* Card */
+.block-palette,
+.workspace,
+.visual-area {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* BLOCK STYLE */
+.block-item,
+.workspace-block {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: white;
+  cursor: grab;
+  transition: 0.2s;
+}
+
+/* TYPE COLORS */
+.event {
+  background: #4caf50;
+}
+
+.action {
+  background: #2196f3;
+}
+
+.logic {
+  background: #ff9800;
+}
+
+/* Workspace */
+.workspace {
+  min-height: 250px;
+}
+
+/* Character */
+.character {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.run-btn {
+  padding: 10px 20px;
+  border: none;
+  background: orange;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.condition-input {
+  margin-top: 6px;
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+.character {
+  font-size: 60px;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+

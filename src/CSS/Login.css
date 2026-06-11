@@ -1,0 +1,211 @@
+/* Background gradient */
+.login-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #0b1020;
+}
+
+/* ============================= */
+/* MODERN AURORA BACKGROUND */
+/* ============================= */
+
+.login-page::before,
+.login-page::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.6;
+  animation: auroraMove 20s ease-in-out infinite alternate;
+}
+
+/* glow kiri */
+.login-page::before {
+  background: #6366f1;
+  top: -150px;
+  left: -150px;
+}
+
+/* glow kanan */
+.login-page::after {
+  background: #22d3ee;
+  bottom: -150px;
+  right: -150px;
+  animation-duration: 25s;
+}
+
+@keyframes auroraMove {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(80px, -60px) scale(1.2);
+  }
+}
+
+/* Card container */
+.login-container {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 620px;
+  text-align: center;
+  color: #000;
+}
+
+/* Title */
+.login-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Input group */
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid #3b82f6;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+/* Links */
+.login-links {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #000;
+}
+
+.login-links a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 40px; /* ruang untuk ikon mata */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+  color: #666;
+  transition: 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: #000;
+}
+/* ============================= */
+/* ✅ POPUP NOTIFICATION (tengah atas) */
+/* ============================= */
+.popup-notification {
+  position: fixed;
+  top: 30px; /* posisi dari atas */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-box {
+  background: #ffffff;
+  padding: 15px 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  font-weight: 600;
+  color: #2ecc71;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: popUp 0.4s ease;
+}
+
+.popup-box::before {
+  content: "✅";
+  font-size: 22px;
+}
+
+@keyframes popUp {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

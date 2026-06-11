@@ -1,0 +1,75 @@
+/* ============================= */
+/* RESET DASAR */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/* ROOT */
+/* ============================= */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================= */
+/* BODY */
+/* ============================= */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #ffffff;
+  color: #213547;
+}
+
+/* ============================= */
+/* LINK */
+/* ============================= */
+
+a {
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* BUTTON (GLOBAL) */
+/* ============================= */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* OPTIONAL: DARK MODE GLOBAL */
+/* ============================= */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #ffffff; /* tetap terang */
+    color: #213547;
+  }
+}

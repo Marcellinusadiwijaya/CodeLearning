@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ========================= */
+/* PAGE */
+/* ========================= */
+
+.cc-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #f5f7fa;
+}
+
+/* ========================= */
+/* TOP BAR */
+/* ========================= */
+
+.cc-topbar {
+  height: 52px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.cc-topbar-left { display: flex; align-items: center; gap: 8px; }
+
+.cc-back-link {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+}
+.cc-back-link:hover { color: #1d4ed8; }
+
+.cc-topbar-sep { color: #d1d5db; }
+.cc-topbar-title { font-weight: 700; }
+.cc-topbar-section { font-size: 12px; color: #6b7280; }
+
+.cc-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 250px;
+}
+
+.cc-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cc-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+}
+
+.cc-progress-label { font-size: 12px; font-weight: 700; }
+
+.cc-lesson-counter { font-size: 12px; color: #6b7280; }
+
+/* ========================= */
+/* SPLIT */
+/* ========================= */
+
+.cc-split {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ========================= */
+/* LEFT PANEL */
+/* ========================= */
+
+.cc-left {
+  width: 45%;
+  background: #fff;
+  padding: 28px;
+  overflow-y: auto;
+  border-right: 1px solid #e5e7eb;
+}
+
+.cc-heading {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.cc-breadcrumb {
+  font-size: 12px;
+  color: #1d4ed8;
+  margin-bottom: 6px;
+}
+
+.cc-lesson-body {
+  font-family: 'JetBrains Mono', monospace;
+  background: #f8faff;
+  padding: 16px;
+  border-radius: 10px;
+  line-height: 1.7;
+}
+
+/* QUIZ */
+
+.cc-question {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.cc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cc-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  background: #fff;
+}
+
+.cc-option:hover { background: #f0f5ff; }
+
+.cc-option--correct {
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.cc-option--wrong {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.cc-option-letter {
+  width: 24px;
+  height: 24px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* CODE */
+
+.cc-goal-box {
+  background: #f8faff;
+  border-left: 4px solid #1d4ed8;
+  padding: 14px;
+  border-radius: 10px;
+}
+
+.cc-goal-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #1d4ed8;
+}
+
+/* NEXT BUTTON */
+
+.cc-next-wrap { margin-top: 20px; }
+
+.cc-next-btn {
+  width: 100%;
+  padding: 12px;
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cc-next-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* ========================= */
+/* RIGHT PANEL */
+/* ========================= */
+
+.cc-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #0f1117;
+}
+
+/* Editor */
+
+.cc-editor {
+  flex: 1;
+  background: #0f1117;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 16px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+/* Buttons */
+
+.cc-submit-wrap {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #1a1d27;
+}
+
+.cc-run-btn {
+  background: #1d4ed8;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cc-submit-btn {
+  background: #16a34a;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* OUTPUT */
+
+.cc-output {
+  background: #0a0c12;
+  padding: 10px;
+  border-top: 1px solid #1f2937;
+}
+
+.cc-output-body pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+.cc-output--success pre { color: #a3e635; }
+.cc-output--error pre { color: #f87171; }

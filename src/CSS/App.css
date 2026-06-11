@@ -1,0 +1,821 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  color: #1a1a2e;
+}
+
+/* ========================= */
+/* PAGE LAYOUT */
+/* ========================= */
+
+.page-bg {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.page-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ========================= */
+/* SIDEBAR */
+/* ========================= */
+
+.sidebar {
+  width: 200px;
+  min-width: 200px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 80px 20px 32px 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-section {
+  margin-bottom: 28px;
+}
+
+.sidebar-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #9aa3af;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.sidebar-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+  margin-bottom: 2px;
+}
+
+.sidebar-option:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.sidebar-option input[type="radio"] {
+  accent-color: #1d4ed8;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.progress-option-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.progress-badge {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 20px;
+  min-width: 22px;
+  text-align: center;
+  background: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+.progress-badge--done {
+  background: #ecfdf5;
+  color: #059669;
+  border-color: #a7f3d0;
+}
+
+.progress-badge--ongoing {
+  background: #fffbeb;
+  color: #d97706;
+  border-color: #fde68a;
+}
+
+.progress-badge--notstarted {
+  background: #f3f4f6;
+  color: #6b7280;
+  border-color: #e5e7eb;
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: #1d4ed8;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.reset-btn:hover {
+  background: #1e40af;
+}
+
+/* ========================= */
+/* MAIN CONTENT */
+/* ========================= */
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 28px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1d4ed8;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2px;
+}
+
+.nav-link {
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+  border-radius: 0;
+}
+
+.nav-link:hover {
+  color: #1d4ed8;
+}
+
+.nav-link.active {
+  color: #1d4ed8;
+  border-bottom: 2px solid #1d4ed8;
+}
+
+.header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 7px 14px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.search-bar:focus-within {
+  border-color: #1d4ed8;
+  background: #fff;
+}
+
+.search-icon {
+  font-size: 13px;
+  opacity: 0.45;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #374151;
+  outline: none;
+  width: 200px;
+}
+
+.search-bar input::placeholder {
+  color: #9ca3af;
+}
+
+/* ========================= */
+/* PROFILE */
+/* ========================= */
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1d4ed8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+.profile-avatar:hover {
+  opacity: 0.85;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  width: 210px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  padding: 16px;
+  z-index: 100;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.profile-info strong {
+  font-size: 15px;
+  color: #111827;
+}
+
+.profile-role {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.view-profile {
+  font-size: 13px;
+  color: #1d4ed8;
+  text-decoration: none;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.view-profile:hover {
+  text-decoration: underline;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ========================= */
+/* WELCOME CARD */
+/* ========================= */
+
+.welcome-card {
+  margin: 24px 28px 0 28px;
+  background: linear-gradient(120deg, #1d4ed8 0%, #3b82f6 55%, #60a5fa 100%);
+  border-radius: 18px;
+  padding: 32px 36px;
+  color: white;
+  box-shadow: 0 6px 28px rgba(29, 78, 216, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative ghost icon like Image 1 */
+.welcome-card::after {
+  content: "🎓";
+  position: absolute;
+  right: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 90px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.welcome-text h1 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.brand-highlight {
+  color: #bfdbfe;
+}
+
+.welcome-text p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  opacity: 0.92;
+  max-width: 480px;
+}
+
+.level-badge {
+  margin-top: 14px !important;
+  display: inline-block;
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 30px;
+  padding: 5px 16px;
+  font-size: 13px !important;
+  font-weight: 600;
+}
+
+.welcome-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 14px;
+  padding: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 28px;
+}
+
+.stat-number {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  opacity: 0.8;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 100%;
+  align-self: stretch;
+  background: rgba(255,255,255,0.25);
+}
+
+/* ========================= */
+/* COURSES AREA */
+/* ========================= */
+
+.courses-area {
+  padding: 24px 28px 48px 28px;
+}
+
+.results-label {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+
+.results-label b {
+  color: #1a1a2e;
+}
+
+/* ========================= */
+/* SECTION TITLE (Available Courses) */
+/* ========================= */
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.section-sub {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* ========================= */
+/* CARD GRID */
+/* ========================= */
+
+.card-grid-flat {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ========================= */
+/* DIVIDER */
+/* ========================= */
+
+.courses-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 36px 0 24px 0;
+}
+
+.courses-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.courses-divider-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ========================= */
+/* EMPTY STATE */
+/* ========================= */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 32px;
+  gap: 12px;
+  color: #9ca3af;
+}
+
+.empty-icon {
+  font-size: 40px;
+}
+
+.empty-state p {
+  font-size: 15px;
+}
+
+.reset-btn-inline {
+  margin-top: 8px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #1d4ed8;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.reset-btn-inline:hover {
+  background: #1e40af;
+}
+
+/* ========================= */
+/* UPCOMING SECTION */
+/* ========================= */
+
+.upcoming-section {
+  padding: 0 28px 48px 28px;
+}
+
+.upcoming-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.upcoming-sub {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.upcoming-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.upcoming-card {
+  background: #fff;
+  border: 1px solid #e8eaed;
+  border-radius: 14px;
+  padding: 20px 18px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.upcoming-card-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.upcoming-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.upcoming-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.upcoming-desc {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.upcoming-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* ========================= */
+/* BLOCK / COURSE CARD REDESIGN */
+/* ========================= */
+
+/* Override Block component card to match Image 1 style */
+.course-card {
+  background: #ffffff;
+  border: 1px solid #e8eaed;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.course-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+
+.course-card-top {
+  height: 4px;
+  width: 100%;
+}
+
+.course-card-body {
+  padding: 20px 20px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0;
+}
+
+.course-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.course-card-status {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.course-card-status--selesai {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.course-card-status--sedang {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.course-card-status--belummulai {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.course-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.course-card-desc {
+  font-size: 12.5px;
+  color: #6b7280;
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.course-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 8px;
+}
+
+.course-card-progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.course-card-progress-label {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.course-card-progress-bar {
+  height: 5px;
+  border-radius: 3px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.course-card-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: #1d4ed8;
+  transition: width 0.3s ease;
+}
+
+.course-card-btn {
+  padding: 7px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #1d4ed8;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background 0.15s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.course-card-btn:hover {
+  background: #1e40af;
+}
+
+.course-card-btn--secondary {
+  background: transparent;
+  color: #1d4ed8;
+  border: 1.5px solid #1d4ed8;
+}
+
+.course-card-btn--secondary:hover {
+  background: #eff6ff;
+}
+
+/* Grade badge (for completed) */
+.course-card-grade {
+  font-size: 12px;
+  font-weight: 700;
+  color: #059669;
+}
+
+/* Locked state */
+.course-card--locked {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.course-card--locked .course-card-btn {
+  background: #9ca3af;
+}
+
+/* Upcoming state */
+.course-card--upcoming .course-card-title {
+  color: #6b7280;
+}
+
+.course-card--upcoming .course-card-btn {
+  background: #f1f5f9;
+  color: #64748b;
+  border: none;
+}

@@ -1,0 +1,65 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import "./CSS/index.css";
+
+// Pages
+import App from "./App";
+import Login from "./Login";
+import Register from "./register";
+// import CodeBlock from "./Pending/CodeBlock";
+import PythonCourse from "./pages/PythonCourse";
+import CourseMenu from "./pages/CourseMenu";
+import AllCourseMenu from "./pages/AllCourseMenu";
+// import HtmlQuiz from "./pages/HtmlCourse";
+// import ProgrammingLogicMenu from "./pages/ProgrammingLogicMenu";
+// import ProgrammingLogic from "./pages/ProgrammingLogic";
+// import CssCourse from "./pages/CssCourse";
+// import JsBasicCourse from "./pages/JsBasicCourse";
+// import JsAdvancedCourse from "./pages/JsAdvancedCourse";
+// import JavaCourse from "./pages/JavaCourse";
+// import PhpCourse from "./pages/PhpCourse";
+// import ReactCourse from "./pages/ReactCourse";
+// import NodejsCourse from "./pages/NodejsCourse";
+// import MySqlCourse from "./pages/MySqlCourse";
+// import GitCourse from "./pages/GitCourse";
+// import CCourse from "./pages/CCourse";
+
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <Router>
+      <Routes>
+        {/* AUTH */}
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* MAIN APP */}
+        <Route path="/app" element={<App />} />
+        {/* MAIN COURSE SYSTEM */}
+        <Route path="/course-menu" element={<CourseMenu />} />
+        <Route path="/course/:courseId" element={<AllCourseMenu />} />
+
+        {/* PROGRAMMING LOGIC (SPECIAL) */}
+        {/* <Route path="/programming-logic-menu" element={<ProgrammingLogicMenu />} />
+        <Route path="/programming-logic/:sectionIndex/:itemIndex" element={<ProgrammingLogic />} /> */}
+
+        {/* COURSE CONTENT */}
+        <Route path="/python-course/:sectionIndex/:itemIndex" element={<PythonCourse />} />
+        {/* <Route path="/html-course/:sectionIndex/:itemIndex" element={<HtmlQuiz />} />
+        <Route path="/css-course/:sectionIndex/:itemIndex" element={<CssCourse />} />
+        <Route path="/js-basic-course/:sectionIndex/:itemIndex" element={<JsBasicCourse />} />
+        <Route path="/js-advanced-course/:sectionIndex/:itemIndex" element={<JsAdvancedCourse />} />
+        <Route path="/java-course/:sectionIndex/:itemIndex" element={<JavaCourse />} />
+        <Route path="/php-course/:sectionIndex/:itemIndex" element={<PhpCourse />} />
+        <Route path="/react-course/:sectionIndex/:itemIndex" element={<ReactCourse />} />
+        <Route path="/nodejs-course/:sectionIndex/:itemIndex" element={<NodejsCourse />} />
+        <Route path="/mysql-course/:sectionIndex/:itemIndex" element={<MySqlCourse />} />
+        <Route path="/git-course/:sectionIndex/:itemIndex" element={<GitCourse />} />
+        <Route path="/c-course/:sectionIndex/:itemIndex" element={<CCourse />} /> */}
+      </Routes>
+    </Router>
+  </StrictMode>
+);

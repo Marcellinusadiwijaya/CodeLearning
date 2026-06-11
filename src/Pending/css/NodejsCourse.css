@@ -1,0 +1,101 @@
+.nodejs-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.option {
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.option:hover {
+  border-color: #4caf50;
+}
+
+.option.selected {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.next-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.next-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.option {
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.option:hover {
+  border-color: #4caf50;
+}
+
+/* BENAR */
+.option.correct {
+  background: #e8f5e9;
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+/* SALAH */
+.option.wrong {
+  background: #ffebee;
+  border-color: #f44336;
+  color: #c62828;
+}
+
+.feedback {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.correct-text {
+  color: #2e7d32;
+}
+
+.wrong-text {
+  color: #c62828;
+}
