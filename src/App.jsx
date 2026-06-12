@@ -227,7 +227,7 @@ function App() {
                     <div className="profile-info">
                       <strong>{username}</strong>
                       <span className="profile-role">{role}</span>
-                      <Link to="/profile" className="view-profile">View Profile</Link>
+                      {/*<Link to="/profile" className="view-profile">View Profile</Link>*/}
                     </div>
                     <button className="logout-btn" onClick={handleLogout}>Logout</button>
                   </div>
