@@ -207,7 +207,8 @@ export default function PythonCourse() {
       const next = { ...progressRef.current, [key]: true };
       progressRef.current = next;
       setProgress(next);
-      await saveCourseProgress("python", next);
+      const allDone = Object.keys(next).length === totalItems;
+      await saveCourseProgress("python", next, allDone);
     }
   };
 

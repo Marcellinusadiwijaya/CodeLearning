@@ -42,7 +42,7 @@ export async function loadCourseProgress(courseId) {
  * @param {string} courseId      - misal: "python"
  * @param {Object} progressData  - misal: { "0-0": true, "0-1": true }
  */
-export async function saveCourseProgress(courseId, progressData) {
+export async function saveCourseProgress(courseId, progressData, isDone = false) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -54,6 +54,7 @@ export async function saveCourseProgress(courseId, progressData) {
       user_id: user.id,
       course_id: courseId,
       progress_data: progressData,
+      done: isDone,
       updated_at: new Date().toISOString(),
     },
     { onConflict: "user_id,course_id" }
