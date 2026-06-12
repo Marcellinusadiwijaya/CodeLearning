@@ -27,6 +27,8 @@
   filter: blur(140px);
   opacity: 0.6;
   animation: auroraMove 22s ease-in-out infinite alternate;
+  z-index: 0; /* FIX: jangan nutup elemen form */
+  pointer-events: none; /* FIX: klik/tap menembus glow effect */
 }
 
 .register-page::before {
@@ -63,6 +65,8 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   width: 620px;
   text-align: center;
+  position: relative; /* FIX: perlu ini supaya z-index berlaku */
+  z-index: 1; /* FIX: pastikan form di atas glow effect */
 }
 
 .register-container h2 {
@@ -294,4 +298,3 @@
     opacity: 1;
   }
 }
-
