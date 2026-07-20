@@ -9,7 +9,7 @@ import App from "./App";
 import Login from "./Login";
 import Register from "./Register";
 import PythonCourse from "./pages/PythonCourse";
-import CourseMenu from "./pages/CourseMenu";
+// import CourseMenu from "./pages/CourseMenu";
 import AllCourseMenu from "./pages/AllCourseMenu";
 import ResetPassword from "./ResetPassword";
 
@@ -27,7 +27,7 @@ createRoot(document.getElementById("root")).render(
         {/* MAIN APP */}
         <Route path="/app" element={<App />} />
         {/* MAIN COURSE SYSTEM */}
-        <Route path="/course-menu" element={<CourseMenu />} />
+        {/* <Route path="/course-menu" element={<CourseMenu />} /> */}
         <Route path="/course/:courseId" element={<AllCourseMenu />} />
 
 
