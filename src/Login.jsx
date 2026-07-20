@@ -39,8 +39,8 @@ const Login = () => {
 
     const user = data.user;
 
-    // Ambil data profil dari tabel 'profiles' di Supabase
-    const { data: profile, error: profileError } = await supabase
+    // Ambil data profil dari tabel 'profiles' di Supabase (untuk validasi bahwa profil ada)
+    const { error: profileError } = await supabase
       .from("profiles")
       .select("username, role")
       .eq("id", user.id)
@@ -52,16 +52,6 @@ const Login = () => {
       setError("Failed to load user profile. Please try again.");
       return;
     }
-
-    
-    const userData = {
-      id: user.id,
-      email: user.email,
-      username: profile.username,
-      role: profile.role,
-    };
-    localStorage.setItem("userData", JSON.stringify(userData));
-    localStorage.setItem("currentUser", user.id);
 
     // Tampilkan popup sukses lalu navigasi ke /app
     setShowPopup(true);

@@ -50,12 +50,35 @@ function App() {
 
   const profileRef = useRef(null);
 
-  const userData     = JSON.parse(localStorage.getItem("userData"));
-  const username     = userData?.username || "Guest";
-  const role         = userData?.role || "";
+  // Data profil user, sekarang diambil langsung dari Supabase (bukan localStorage)
+  const [username, setUsername] = useState("Guest");
+  const [role, setRole]         = useState("");
   const avatarLetter = username.charAt(0).toUpperCase();
 
   const allBlocks = blocks;
+
+  //Ambil profil user (username, role) langsung dari Supabase
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+
+      const { data: profile, error } = await supabase
+        .from("profiles")
+        .select("username, role")
+        .eq("id", user.id)
+        .single();
+
+      if (error) {
+        console.error("[App] gagal ambil profil:", error.message);
+        return;
+      }
+
+      setUsername(profile?.username || "Guest");
+      setRole(profile?.role || "");
+    };
+    fetchProfile();
+  }, []);
 
   //Load semua data kursus dari Supabase (ganti allCourse)
   useEffect(() => {
@@ -129,8 +152,6 @@ function App() {
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
-    localStorage.removeItem("userData");
-    localStorage.removeItem("currentUser");
     window.location.href = "/login";
   };
 
