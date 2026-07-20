@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { loadCourseData } from "../Data/courseService";
-import { loadCourseProgress, saveCourseProgress } from "../Data/progressService"; 
+import { loadCourseData } from "../../Data/courseService";
+import { loadCourseProgress, saveCourseProgress } from "../../Data/progressService"; 
 import { useState, useEffect } from "react";
 import "../CSS/JavaCourse.css";
 
